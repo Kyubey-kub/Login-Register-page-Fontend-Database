@@ -1,0 +1,341 @@
+/* Reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url(https://tse4.mm.bing.net/th?id=OIP.0s6ZOxZebZOlUvFUGlt3QQHaEK&pid=Api&P=0&h=220) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 999;
+}
+
+.logo {
+    font-size: 5em;
+    color: #fff;
+}
+
+.nav a {
+    position: relative;
+    font-size: 1.1em;
+    color: #06fc89;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+}
+
+.nav a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: #78caf9;
+    border-radius: 5px;
+    left: 0;
+    bottom: -6px;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+
+.nav a:hover::after {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+.nav .btnlogin-popup {
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    background: transparent;
+    border: 2px solid #fff;
+    outline: none;
+    
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: .5s;
+}
+
+.nav .btnlogin-popup :hover {
+    background: #fff;
+    color: black;
+}
+/*  */
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    /* background: url(https://images.unsplash.com/photo-1562575214-da9fcf59b907?auto=format&fit=crop&q=80&w=1886&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)no-repeat; */
+    background-position: center;
+    background-size: cover;
+}
+
+.from_box {
+    position: relative;
+    width: 400px;
+    height: 450px;
+    background: transparent;
+    border: 2px solid rgba(255, 253, 253, 0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform .5s ease , height .2s ease;
+    z-index: 0;
+    overflow: hidden;
+    transform: scale(0);
+}
+
+.from_box .close {
+    color: #fff;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    background: rgb(16, 16, 16);
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.from_box.active {
+    height: 550px;
+}
+
+.from_box.active-popup {
+    transform: scale(1);
+}
+
+.from_box .from_value_log {
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+.from_value_log {
+    position: absolute;
+}
+
+.from_box.active .from_value_log {
+    transition: none;
+    transform: translateX(-400px);
+}
+
+.from_value_re {
+    position: absolute;
+    top: 0; 
+    transform: translateX(400px);
+}
+
+.from_box .from_value_re {
+    position: absolute;
+    transform: translateX(400px);
+}
+
+.from_box.active .from_value_re {
+    transition: transform .18s ease;
+    transform: translateX(0);
+    position: absolute;
+    top: 20px;
+}
+
+h2 {
+    font-size: 2em;
+    color: #fff;
+    text-align: center;
+}
+
+.input_box {
+    position: relative;
+    margin: 30px 0;
+    width: 310px;
+    border-bottom: 2px solid #fff;
+}
+
+.input_box label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 1em;
+    pointer-events: none;
+    transition: .5s;
+}
+
+input:focus ~ label,input:valid ~ label {
+    top: -5px;
+}
+
+.input_box input {
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    padding: 0 35px 0 5px;
+    color: #fff;
+}
+
+.input_box ion-icon {
+    position: absolute;
+    right: 8px;
+    color: #fff;
+    font-size: 1.2em;
+    top: 20px;
+}
+
+.forget {
+    margin: -15px 0 15px;
+    font-size: .9em;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+}
+
+.forget label input {
+    margin-right: 3px;
+}
+
+.forget label a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 60px;
+    
+}
+
+.forget label a:hover {
+    text-decoration: underline;
+}
+
+button {
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    background: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: 6px 6px 12px #c5c5c5
+                -6px -6x 12px #ffffff;
+}
+
+button::before {
+    content: '';
+    width: 0;
+    height: 3em;
+    border-radius: 8px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(to right, #5b5a5a 0%, #b2a6a6 100%);
+    transition: .5s ease;
+    display: block;
+    z-index: -1;
+}
+
+button:hover::before {
+    width: 100%;
+    height: 40px;
+}
+
+.register {
+    font-size: .9em;
+    color: #fff;
+    text-align: center;
+    margin: 25px 0 10px;
+}
+
+.register p a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+}
+
+.register p a:hover {
+    text-decoration: underline;
+}  
+
+.Login {
+    font-size: .9em;
+    color: #fff;
+    text-align: center;
+    margin: 25px 0 10px;
+}
+
+.Login p a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+}
+
+.Login p a:hover {
+    text-decoration: underline;
+}
+
+.error {
+    width: 92%;
+    margin: 0px auto;
+    padding: 10px;
+    border: 1px solid #a94442;
+    color: #a94442;
+    background: #f2dede;
+    border-radius: 5px;
+    text-align: left;
+    z-index: 99;
+}
+
+.success {
+    color: #3c763d;
+    background: #dff9d8;
+    border: 1px solid #3c763d;
+    margin-bottom: 20px;
+    z-index: 99;
+}
+
+/* Adding */
+.cssanimation, .cssanimation span {
+    animation-duration: 5s;
+    animation-fill-mode: both;
+}
+
+.cssanimation span { display: inline-block }
+
+.leFadeIn span { animation-name: leFadeIn }
+@keyframes leFadeIn {
+    from { opacity: 0 }
+    to { opacity: 1 }
+}
